@@ -25,7 +25,9 @@ console.log(tree.insert(20));
 console.log(tree.insert(40));
 console.log(tree.insert(10));
 
-
-function traverse(node){
-  const tree
+function traverse(node) {
+  const tree = { value: node.value };
+  tree.left = node.left === null ? null : traverse(node.left);
+  tree.right = node.right === null ? null : traverse(node.right);
+  return tree;
 }
